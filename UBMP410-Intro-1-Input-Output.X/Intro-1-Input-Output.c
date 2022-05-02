@@ -37,99 +37,26 @@ int main(void)
     // Code in this while loop runs repeatedly.
     while(1)
 	{
-        // If SW2 is pressed, make a flashy light pattern
+        
+        // Make a tone while SW5 is held
         if(SW2 == 0)
         {
-            LED3 = 1;
-            __delay_ms(100);
-            LED4 = 1;
-            __delay_ms(100);
-            LED5 = 1;
-            __delay_ms(100);
-            LED6 = 1;
-            __delay_ms(100);
-            LED3 = 0;
-            __delay_ms(100);
-            LED4 = 0;
-            __delay_ms(100);
-            LED5 = 0;
-            __delay_ms(100);
-            LED6 = 0;
-            __delay_ms(100);
+            BEEPER = !BEEPER;
+            __delay_us(1300);
         }
-        
-        // If SW3 is pressed, make a flashy light pattern
+
+        // Make a tone while SW5 is held
         if(SW3 == 0)
         {
-            LED3 = 1;
-            __delay_ms(100);
-            LED3 = 0;
-            __delay_ms(100);
-            LED4 = 1;
-            __delay_ms(100);
-            LED4 = 0;
-            __delay_ms(100);
-            LED5 = 1;
-            __delay_ms(100);
-            LED5 = 0;
-            __delay_ms(100);
-            LED6 = 1;
-            __delay_ms(100);
-            LED6 = 0;
-            __delay_ms(100);
+            BEEPER = !BEEPER;
+            __delay_us(2500);
         }
 
-        // Add code for your Program Analysis and Programming Activities here:
-        // Conditional 'AND' code
-        if(SW3 == 0 || SW4 == 0)
-        {
-            LED4 = 1;
-        }
-        else
-        {
-            LED4 = 0;
-        }
-        
-        // If SW4 is pressed, make a flashy light pattern
+        // Make a tone while SW5 is held
         if(SW4 == 0)
         {
-            LED3 = 1;
-            __delay_ms(100);
-            LED4 = 1;
-            __delay_ms(100);
-            LED4 = 0;
-            __delay_ms(100);
-            LED3 = 0;
-            __delay_ms(100);
-            LED5 = 1;
-            __delay_ms(100);
-            LED6 = 1;
-            __delay_ms(100);
-            LED6 = 0;
-            __delay_ms(100);
-            LED5 = 0;
-            __delay_ms(100);
-        }
-
-        // If SW5 is pressed, make a flashy light pattern
-        if(SW5 == 0)
-        {
-            LED3 = 1;
-            __delay_ms(100);
-            LED5 = 1;
-            __delay_ms(100);
-            LED5 = 0;
-            __delay_ms(100);
-            LED3 = 0;
-            __delay_ms(100);
-            LED4 = 1;
-            __delay_ms(100);
-            LED6 = 1;
-            __delay_ms(100);
-            LED6 = 0;
-            __delay_ms(100);
-            LED4 = 0;
-            __delay_ms(100);
+            BEEPER = !BEEPER;
+            __delay_us(1000);
         }
 
         // Make a tone while SW5 is held
@@ -364,6 +291,9 @@ The delay becomes longer
  *    Test each tone by pressing each button individually. Next, press two or
  *    more buttons at the same time. Describe what the tone waveform would look
  *    like when more than one button is held.
+
+ It's like the two (or more) waveforms from each button merged together
+
  * 
  * 6. Use individual 'if' structures to simulate 'Start' and 'Stop' buttons for
  *    an industrial machine. LED D4 should turn on when SW3 is pressed, stay on
