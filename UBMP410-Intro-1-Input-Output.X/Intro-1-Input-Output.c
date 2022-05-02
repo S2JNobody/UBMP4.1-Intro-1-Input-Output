@@ -46,17 +46,15 @@ int main(void)
         }
 
         // Make a tone while SW5 is held
-        if(SW3 == 0)
+        if(SW3 == 0 && SW4 != 0)
         {
-            BEEPER = !BEEPER;
-            __delay_us(2500);
+            LED1 = 0;
         }
 
         // Make a tone while SW5 is held
         if(SW4 == 0)
         {
-            BEEPER = !BEEPER;
-            __delay_us(1000);
+            LED1 = 1;
         }
 
         // Make a tone while SW5 is held
@@ -299,12 +297,19 @@ The delay becomes longer
  *    an industrial machine. LED D4 should turn on when SW3 is pressed, stay on
  *    even after SW3 is released, and turn off when SW4 is pressed. Test your
  *    program to make sure it works.
+
+ All working
+
  * 
  * 7. Running your program from 6, above, describe what happens when both SW3
  *    and SW4 are pressed. Does LED D4 stay on? If so, how does the brightness
  *    of LED D4 compare between its normal on state following SW3 being pressed
- *    to this new state when both SW3 and SW4 are bing held? Can you explain
+ *    to this new state when both SW3 and SW4 are being held? Can you explain
  *    why it changes?
+
+ LED D4 stays on, but the brightness is decreased. It's maybe about half as bright. This is because the
+ light is actually turning on and off faster than I can see, making it instead appear less bright
+
  * 
  * 8. As you can imagine, an industrial machine that is able to turn on even
  *    while its 'Stop' button is pressed represents a significant safety hazard.
