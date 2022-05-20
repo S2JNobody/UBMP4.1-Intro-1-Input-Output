@@ -37,7 +37,7 @@ int main(void)
     // Code in this while loop runs repeatedly.
     while(1)
 	{
-        
+        LED3 = 1;
         // Make a tone while SW5 is held
         if(SW2 == 0)
         {
@@ -79,21 +79,21 @@ int main(void)
  *    explain why this happens when SW2 is held.
  *  It flashes once when quickly pressed, and continues to flash when held. This is because the
  *  switch is checked for being pressed every time through the loop and runs the code every time if its pressed
-
  * 2. Explain the difference between the statements: LED3 = 0; and LED3 = 1;
  * LED3 = 0 means off, LED3 = 1 means on
  * 3. What voltage do you expect the microcontroller to output to LED D3 when
  *    the statement LED3 = 0; runs? What voltage do you expect the output to be
  *    when the statement LED3 = 1; runs?
 
-  When LED3 = 0, the voltage should be 0, and when LED3 = 1, the voltage should be 1
+  When LED3 = 0, the voltage should be 0, and when LED3 = 1, the voltage should be 5V
 
  * 
  *    You can confirm the output voltage with a voltmeter if you have access
  *    to one. If you tried that, did the voltage match your prediction?
  * 
 
- TODO: this.
+ Yes its doing the right stuff
+
  
  * 4. The statement 'if(SW2 == 0)' uses two equal signs, while the statement
  *    'LED3 = 1;' uses a single equal sign. What operation is performed by one
@@ -154,7 +154,7 @@ int main(void)
  *    'while' structures making up the momentary button code.
  *    
 
-the if structure allows other code to do stuff / other buttons to do stuff
+the if structure allows other code to do stuff / other buttons to do stuff when it the buttonis pressed
 The while structure will allow nothing else to happen while the button is pressed
 
  * 7. Let's explore logical conditions using 'if' statements. Replace the code
